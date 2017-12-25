@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Xamarin.RangeSlider.Forms;assembly=Xamarin.RangeSlider.Forms"
+             x:Class="BasicStockCalculator.SettingsPage"
+             Title="Settings">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="20, 40, 20, 20"/>
+            <On Platform="Android, WinPhone, Windows" Value="20"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Range"/>
+            <forms:RangeSlider x:Name="RangeSlider"
+                               MinimumValue="-25"
+                               MaximumValue="25"
+                               LowerValue="{Binding StartRange, Mode=TwoWay}"
+                               UpperValue="{Binding EndRange, Mode=TwoWay}"
+                               StepValue="0"
+                               StepValueContinuously="False"
+                               VerticalOptions="Center"
+                               TextSize="15"
+                               ShowTextAboveThumbs="True"/>
+            <Label Text="Step"/>
+            <Stepper x:Name="stepStepper"
+                     Value="{Binding Step, Mode=TwoWay}"
+                     Minimum="0.1"
+                     Maximum="1.0"
+                     Increment="0.1"/>
+            <Label Text="{Binding Path=Value, Source={x:Reference stepStepper}}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

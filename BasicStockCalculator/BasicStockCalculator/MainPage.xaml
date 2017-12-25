@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BasicStockCalculator"
+             x:Class="BasicStockCalculator.MainPage"
+             Title="Basic Stock Calculator">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Settings"
+                     Order="Primary"
+                     Icon="ic_settings_white_24dp.png"
+                     Text="Settings"
+                     Priority="0"
+                     Clicked="OnSettingsClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Enter stock amount"
+                       Keyboard="Numeric"
+                       TextChanged="OnValueChanged"/>
+            <ListView ItemsSource="{x:Static local:MainPage.Calculations}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
