@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:BasicStockCalculator"
              x:Class="BasicStockCalculator.MainPage"
              Title="Basic Stock Calculator">
-
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="Settings"
                      Order="Primary"
@@ -18,7 +17,36 @@
             <Entry Placeholder="Enter stock amount"
                        Keyboard="Numeric"
                        TextChanged="OnValueChanged"/>
-            <ListView ItemsSource="{x:Static local:MainPage.Calculations}"/>
+            <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                <ListView x:Name="NegativeListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding Data}"
+                                           BackgroundColor="{Binding BgColor}"
+                                           VerticalOptions="FillAndExpand"
+                                           HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ListView x:Name="PositiveListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding Data}"
+                                           BackgroundColor="{Binding BgColor}"
+                                           VerticalOptions="FillAndExpand"
+                                           HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
