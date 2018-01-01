@@ -18,29 +18,26 @@
                        Keyboard="Numeric"
                        TextChanged="OnValueChanged"/>
             <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
-                <ListView x:Name="NegativeListView">
+                <ListView x:Name="PercentageListView">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <StackLayout>
-                                    <Label Text="{Binding Data}"
-                                           BackgroundColor="{Binding BgColor}"
+                            <ViewCell Height="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Percentage}"
+                                           BackgroundColor="{Binding BgColorPercentage}"
                                            VerticalOptions="FillAndExpand"
-                                           HorizontalOptions="FillAndExpand"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <ListView x:Name="PositiveListView">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout>
-                                    <Label Text="{Binding Data}"
-                                           BackgroundColor="{Binding BgColor}"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding Positive}"
+                                           BackgroundColor="{Binding BgColorPositive}"
                                            VerticalOptions="FillAndExpand"
-                                           HorizontalOptions="FillAndExpand"/>
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding Negative}"
+                                           BackgroundColor="{Binding BgColorNegative}"
+                                           VerticalOptions="FillAndExpand"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalTextAlignment="Center"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

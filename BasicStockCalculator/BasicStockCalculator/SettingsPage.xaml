@@ -13,23 +13,30 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Range"/>
-            <forms:RangeSlider x:Name="RangeSlider"
-                               MinimumValue="-25"
+            <!-- <forms:RangeSlider x:Name="RangeSlider"
+                               MinimumValue="0"
                                MaximumValue="25"
-                               LowerValue="{Binding StartRange, Mode=TwoWay}"
-                               UpperValue="{Binding EndRange, Mode=TwoWay}"
+                               LowerValue="{Binding StartRange, Mode=OneWay}"
+                               UpperValue="{Binding EndRange, Mode=OneWay}"
                                StepValue="0"
                                StepValueContinuously="False"
                                VerticalOptions="Center"
                                TextSize="15"
-                               ShowTextAboveThumbs="True"/>
-            <Label Text="Step"/>
+                               ShowTextAboveThumbs="True"/> -->
+            <Slider x:Name="settingSlider"
+                    Value="{Binding SliderVal, Mode=TwoWay}"
+                    Maximum="25"
+                    Minimum="0"
+                    VerticalOptions="Center"
+                    ValueChanged="OnSliderValueChanged"/>
+            <Label Text="{Binding Path=Value, Source={x:Reference settingSlider}}"/>
+            <!-- <Label Text="Step"/>
             <Stepper x:Name="stepStepper"
                      Value="{Binding Step, Mode=TwoWay}"
                      Minimum="0.1"
                      Maximum="1.0"
                      Increment="0.1"/>
-            <Label Text="{Binding Path=Value, Source={x:Reference stepStepper}}"/>
+            <Label Text="{Binding Path=Value, Source={x:Reference stepStepper}}"/> -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
