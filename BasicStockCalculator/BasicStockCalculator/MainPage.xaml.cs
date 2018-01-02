@@ -30,13 +30,13 @@ namespace BasicStockCalculator
                 if(e.NewTextValue.Length > 0)
                 {
                     EnteredValue = Convert.ToDouble(e.NewTextValue);
-                    for (double i = 0; i <= SliderVal; i++)
+                    for (double i = 1; i <= SliderVal; i++)
                     {
                         PercentageCalculations.Add(new Calculation()
                         {
                             Percentage = Math.Round(i, 1) + "%",
                             Positive = String.Format("{0:0.00}", ((i / 100) * EnteredValue)) + " : " + String.Format("{0:0.00}", ((i / 100) * EnteredValue) + EnteredValue),
-                            Negative = String.Format("{0:0.00}", ((i / 100) * EnteredValue)) + " : " + String.Format("{0:0.00}", ((i / 100) * EnteredValue) + EnteredValue),
+                            Negative = String.Format("{0:0.00}", ((i / 100) * EnteredValue)) + " : " + String.Format("{0:0.00}", (EnteredValue - (i / 100) * EnteredValue)),
                             BgColorPercentage = Color.FromHex("#FFFFFF"),
                             BgColorPositive = Color.FromHex("#EFFCD7"),
                             BgColorNegative = Color.FromHex("#FDF3F2")

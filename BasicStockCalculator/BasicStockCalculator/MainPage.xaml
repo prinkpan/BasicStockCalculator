@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BasicStockCalculator"
              x:Class="BasicStockCalculator.MainPage"
-             Title="Basic Stock Calculator">
+             Title="Stock Kit">
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="Settings"
                      Order="Primary"
@@ -14,30 +14,37 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Enter stock amount"
+            <Entry Placeholder="Enter Stock Amount"
                        Keyboard="Numeric"
-                       TextChanged="OnValueChanged"/>
+                       TextChanged="OnValueChanged"
+                   FontSize="Medium"/>
             <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
                 <ListView x:Name="PercentageListView">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell Height="10">
-                                <StackLayout Orientation="Horizontal">
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
                                     <Label Text="{Binding Percentage}"
                                            BackgroundColor="{Binding BgColorPercentage}"
-                                           VerticalOptions="FillAndExpand"
+                                           VerticalOptions="Fill"
                                            HorizontalOptions="FillAndExpand"
-                                           VerticalTextAlignment="Center"/>
+                                           VerticalTextAlignment="Center" 
+                                           HorizontalTextAlignment="Center"  
+                                           HeightRequest="5"/>
                                     <Label Text="{Binding Positive}"
                                            BackgroundColor="{Binding BgColorPositive}"
-                                           VerticalOptions="FillAndExpand"
+                                           VerticalOptions="Fill"
                                            HorizontalOptions="FillAndExpand"
-                                           VerticalTextAlignment="Center"/>
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"
+                                           HeightRequest="5"/>
                                     <Label Text="{Binding Negative}"
                                            BackgroundColor="{Binding BgColorNegative}"
-                                           VerticalOptions="FillAndExpand"
+                                           VerticalOptions="Fill"
                                            HorizontalOptions="FillAndExpand"
-                                           VerticalTextAlignment="Center"/>
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"
+                                           HeightRequest="5"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
