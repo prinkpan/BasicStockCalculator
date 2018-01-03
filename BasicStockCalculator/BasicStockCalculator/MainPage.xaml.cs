@@ -24,10 +24,10 @@ namespace BasicStockCalculator
             try
             {
                 BSCSettingsVM bscSettings = new BSCSettingsVM();
-                var SliderVal = bscSettings.SliderVal;
+                var SliderVal = bscSettings.Step;
 
                 PercentageCalculations.Clear();
-                if(e.NewTextValue.Length > 0)
+                if (e.NewTextValue.Length > 0)
                 {
                     EnteredValue = Convert.ToDouble(e.NewTextValue);
                     for (double i = 1; i <= SliderVal; i++)
@@ -36,7 +36,7 @@ namespace BasicStockCalculator
                         {
                             Percentage = Math.Round(i, 1) + "%",
                             Positive = String.Format("{0:0.00}", ((i / 100) * EnteredValue)) + " : " + String.Format("{0:0.00}", ((i / 100) * EnteredValue) + EnteredValue),
-                            Negative = String.Format("{0:0.00}", ((i / 100) * EnteredValue)) + " : " + String.Format("{0:0.00}", (EnteredValue - (i / 100) * EnteredValue)),
+                            Negative = " - " + String.Format("{0:0.00}", ((i / 100) * EnteredValue)) + " : " + String.Format("{0:0.00}", (EnteredValue - (i / 100) * EnteredValue)),
                             BgColorPercentage = Color.FromHex("#FFFFFF"),
                             BgColorPositive = Color.FromHex("#EFFCD7"),
                             BgColorNegative = Color.FromHex("#FDF3F2")

@@ -12,7 +12,7 @@
     </ContentPage.Padding>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Range"/>
+            <!--<Label Text="Range"/>-->
             <!-- <forms:RangeSlider x:Name="RangeSlider"
                                MinimumValue="0"
                                MaximumValue="25"
@@ -23,20 +23,23 @@
                                VerticalOptions="Center"
                                TextSize="15"
                                ShowTextAboveThumbs="True"/> -->
-            <Slider x:Name="settingSlider"
+            <!--<Slider x:Name="settingSlider"
                     Value="{Binding SliderVal, Mode=TwoWay}"
                     Maximum="25"
                     Minimum="0"
                     VerticalOptions="Center"
                     ValueChanged="OnSliderValueChanged"/>
-            <Label Text="{Binding Path=Value, Source={x:Reference settingSlider}}"/>
-            <!-- <Label Text="Step"/>
+            <Label Text="{Binding Path=Value, Source={x:Reference settingSlider}}"/>-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Step : "/>
+                <Label Text="{Binding Path=Value, Source={x:Reference stepStepper}}"/>
+            </StackLayout>
             <Stepper x:Name="stepStepper"
                      Value="{Binding Step, Mode=TwoWay}"
-                     Minimum="0.1"
-                     Maximum="1.0"
-                     Increment="0.1"/>
-            <Label Text="{Binding Path=Value, Source={x:Reference stepStepper}}"/> -->
+                     Minimum="1"
+                     Maximum="25"
+                     Increment="1"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

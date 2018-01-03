@@ -43,6 +43,14 @@ namespace BasicStockCalculator.Helpers
             get => AppSettings.GetValueOrDefault(nameof(SliderVal), 25);
             set => AppSettings.AddOrUpdateValue(nameof(SliderVal), value);
         }
+        public static double Step
 
+        {
+
+            get => AppSettings.GetValueOrDefault(nameof(Step), 1.0);
+
+            set => AppSettings.AddOrUpdateValue(nameof(Step), value);
+
+        }
     }
 }

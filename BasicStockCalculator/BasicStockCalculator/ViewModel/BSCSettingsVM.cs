@@ -21,6 +21,28 @@ namespace BasicStockCalculator.ViewModel
             }
         }
 
+        public double Step
+
+        {
+
+            get => Settings.Step;
+
+            set
+
+            {
+
+                if (Settings.Step == value)
+
+                    return;
+
+                Settings.Step = value;
+
+                OnPropertyChanged();
+
+            }
+
+        }
+
         #region INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string name = "") =>
