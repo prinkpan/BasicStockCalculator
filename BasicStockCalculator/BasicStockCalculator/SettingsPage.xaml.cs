@@ -18,12 +18,5 @@ namespace BasicStockCalculator
             InitializeComponent ();
             BindingContext = new BSCSettingsVM();
         }
-
-        //void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
-        //{
-        //    var StepValue = 1.0;
-        //    var newStep = Math.Round(e.NewValue / StepValue);
-        //    settingSlider.Value = newStep * StepValue;
-        //}
     }
 }

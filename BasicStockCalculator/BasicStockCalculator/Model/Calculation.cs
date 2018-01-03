@@ -10,8 +10,5 @@ namespace BasicStockCalculator.Model
         public string Percentage { get; set; }
         public string Positive { get; set; }
         public string Negative { get; set; }
-        public Color BgColorPercentage { get; set; }
-        public Color BgColorPositive { get; set; }
-        public Color BgColorNegative { get; set; }
     }
 }

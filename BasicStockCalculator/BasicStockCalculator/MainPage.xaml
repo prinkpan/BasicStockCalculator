@@ -25,21 +25,21 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
                                     <Label Text="{Binding Percentage}"
-                                           BackgroundColor="{Binding BgColorPercentage}"
+                                           BackgroundColor="White"
                                            VerticalOptions="Fill"
                                            HorizontalOptions="FillAndExpand"
                                            VerticalTextAlignment="Center" 
                                            HorizontalTextAlignment="Center"  
                                            HeightRequest="5"/>
                                     <Label Text="{Binding Positive}"
-                                           BackgroundColor="{Binding BgColorPositive}"
+                                           BackgroundColor="#EFFCD7"
                                            VerticalOptions="Fill"
                                            HorizontalOptions="FillAndExpand"
                                            VerticalTextAlignment="Center"
                                            HorizontalTextAlignment="Center"
                                            HeightRequest="5"/>
                                     <Label Text="{Binding Negative}"
-                                           BackgroundColor="{Binding BgColorNegative}"
+                                           BackgroundColor="#FDF3F2"
                                            VerticalOptions="Fill"
                                            HorizontalOptions="FillAndExpand"
                                            VerticalTextAlignment="Center"

@@ -24,27 +24,24 @@ namespace BasicStockCalculator
             try
             {
                 BSCSettingsVM bscSettings = new BSCSettingsVM();
-                var SliderVal = bscSettings.Step;
+                var MaxRange = bscSettings.MaxRange;
 
                 PercentageCalculations.Clear();
                 if (e.NewTextValue.Length > 0)
                 {
                     EnteredValue = Convert.ToDouble(e.NewTextValue);
-                    for (double i = 1; i <= SliderVal; i++)
+                    for (int i = 1; i <= MaxRange; i++)
                     {
+                        var percent = (i / 100.00) * EnteredValue;
+                        var positive = EnteredValue + percent;
+                        var negative = EnteredValue - percent;
+
                         PercentageCalculations.Add(new Calculation()
                         {
-                            Percentage = Math.Round(i, 1) + "%",
-                            Positive = String.Format("{0:0.00}", ((i / 100) * EnteredValue)) + " : " + String.Format("{0:0.00}", ((i / 100) * EnteredValue) + EnteredValue),
-                            Negative = " - " + String.Format("{0:0.00}", ((i / 100) * EnteredValue)) + " : " + String.Format("{0:0.00}", (EnteredValue - (i / 100) * EnteredValue)),
-                            BgColorPercentage = Color.FromHex("#FFFFFF"),
-                            BgColorPositive = Color.FromHex("#EFFCD7"),
-                            BgColorNegative = Color.FromHex("#FDF3F2")
+                            Percentage = i + "%",
+                            Positive = String.Format("{0:0.00}", percent) + " : " + String.Format("{0:0.00}", positive),
+                            Negative = "-" + String.Format("{0:0.00}", percent) + " : " + String.Format("{0:0.00}", negative)
                         });
-                    }
-                    if (PercentageCalculations.Count == 0)
-                    {
-                        PercentageCalculations.Add(new Calculation() { Percentage = "Not applicable", BgColorPercentage = Color.White, Positive = "Not applicable", BgColorPositive= Color.White, Negative= "Not applicable", BgColorNegative= Color.White });
                     }
                     PercentageListView.ItemsSource = PercentageCalculations;
                 }
