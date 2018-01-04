@@ -9,38 +9,16 @@ namespace BasicStockCalculator.ViewModel
 {
     public class BSCSettingsVM : INotifyPropertyChanged
     {
-        public double SliderVal
+        public int MaxRange
         {
-            get => Settings.SliderVal;
+            get => Settings.MaxRange;
             set
             {
-                if (Settings.SliderVal == value)
+                if (Settings.MaxRange == value)
                     return;
-                Settings.SliderVal = value;
+                Settings.MaxRange = value;
                 OnPropertyChanged();
             }
-        }
-
-        public double Step
-
-        {
-
-            get => Settings.Step;
-
-            set
-
-            {
-
-                if (Settings.Step == value)
-
-                    return;
-
-                Settings.Step = value;
-
-                OnPropertyChanged();
-
-            }
-
         }
 
         #region INotifyPropertyChanged implementation

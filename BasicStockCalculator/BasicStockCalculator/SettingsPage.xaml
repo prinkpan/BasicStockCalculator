@@ -11,35 +11,30 @@
         </OnPlatform>
     </ContentPage.Padding>
     <ContentPage.Content>
-        <StackLayout>
-            <!--<Label Text="Range"/>-->
-            <!-- <forms:RangeSlider x:Name="RangeSlider"
-                               MinimumValue="0"
-                               MaximumValue="25"
-                               LowerValue="{Binding StartRange, Mode=OneWay}"
-                               UpperValue="{Binding EndRange, Mode=OneWay}"
-                               StepValue="0"
-                               StepValueContinuously="False"
-                               VerticalOptions="Center"
-                               TextSize="15"
-                               ShowTextAboveThumbs="True"/> -->
-            <!--<Slider x:Name="settingSlider"
-                    Value="{Binding SliderVal, Mode=TwoWay}"
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Maximum percent: "
+                   VerticalOptions="FillAndExpand"
+                   VerticalTextAlignment="Center"
+                   Grid.Row="0" Grid.Column="0"/>
+            <Label Text="{Binding Path=Value, Source={x:Reference rangeStepper}}"
+                   VerticalOptions="FillAndExpand"
+                   VerticalTextAlignment="Center"
+                   Grid.Row="0" Grid.Column="1"/>
+            <Stepper x:Name="rangeStepper"
+                    Value="{Binding MaxRange, Mode=TwoWay}"
+                    Minimum="1"
                     Maximum="25"
-                    Minimum="0"
-                    VerticalOptions="Center"
-                    ValueChanged="OnSliderValueChanged"/>
-            <Label Text="{Binding Path=Value, Source={x:Reference settingSlider}}"/>-->
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Step : "/>
-                <Label Text="{Binding Path=Value, Source={x:Reference stepStepper}}"/>
-            </StackLayout>
-            <Stepper x:Name="stepStepper"
-                     Value="{Binding Step, Mode=TwoWay}"
-                     Minimum="1"
-                     Maximum="25"
-                     Increment="1"/>
-            
-        </StackLayout>
+                    Increment="1"
+                    Grid.Row="0" Grid.Column="2"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

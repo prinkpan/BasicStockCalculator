@@ -38,19 +38,10 @@ namespace BasicStockCalculator.Helpers
             }
         }
 
-        public static double SliderVal
+        public static int MaxRange
         {
-            get => AppSettings.GetValueOrDefault(nameof(SliderVal), 25);
-            set => AppSettings.AddOrUpdateValue(nameof(SliderVal), value);
-        }
-        public static double Step
-
-        {
-
-            get => AppSettings.GetValueOrDefault(nameof(Step), 1.0);
-
-            set => AppSettings.AddOrUpdateValue(nameof(Step), value);
-
+            get => AppSettings.GetValueOrDefault(nameof(MaxRange), 1);
+            set => AppSettings.AddOrUpdateValue(nameof(MaxRange), value);
         }
     }
 }
