@@ -39,8 +39,9 @@ namespace BasicStockCalculator
                         PercentageCalculations.Add(new Calculation()
                         {
                             Percentage = i + "%",
-                            Positive = String.Format("{0:0.00}", percent) + " : " + String.Format("{0:0.00}", positive),
-                            Negative = "-" + String.Format("{0:0.00}", percent) + " : " + String.Format("{0:0.00}", negative)
+                            PercentVal = String.Format("{0:0.00}", percent),
+                            Positive =  String.Format("{0:0.00}", positive),
+                            Negative = String.Format("{0:0.00}", negative)
                         });
                     }
                     PercentageListView.ItemsSource = PercentageCalculations;
