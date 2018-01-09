@@ -33,7 +33,8 @@
                                            HorizontalOptions="FillAndExpand"
                                            VerticalTextAlignment="Center" 
                                            HorizontalTextAlignment="Center"  
-                                           HeightRequest="5"/>
+                                           HeightRequest="5"
+                                           WidthRequest="15"/>
                                     <Label Text="{Binding PercentVal}"
                                            BackgroundColor="#EFFCD7"
                                            VerticalOptions="Fill"

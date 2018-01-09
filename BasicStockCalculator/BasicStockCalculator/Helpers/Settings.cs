@@ -40,7 +40,7 @@ namespace BasicStockCalculator.Helpers
 
         public static int MaxRange
         {
-            get => AppSettings.GetValueOrDefault(nameof(MaxRange), 1);
+            get => AppSettings.GetValueOrDefault(nameof(MaxRange), 10);
             set => AppSettings.AddOrUpdateValue(nameof(MaxRange), value);
         }
     }
