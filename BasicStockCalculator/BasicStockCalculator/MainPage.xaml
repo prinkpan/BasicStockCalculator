@@ -14,9 +14,10 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Enter Stock Amount"
-                       Keyboard="Numeric"
-                       TextChanged="OnValueChanged"
+            <Entry x:Name="stockAmount"
+                   Placeholder="Enter Stock Amount"
+                   Keyboard="Numeric"
+                   TextChanged="OnValueChanged"
                    FontSize="Medium"/>
             <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
                 <ListView x:Name="PercentageListView">

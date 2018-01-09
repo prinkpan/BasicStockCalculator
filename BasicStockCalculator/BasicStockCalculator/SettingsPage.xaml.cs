@@ -18,5 +18,11 @@ namespace BasicStockCalculator
             InitializeComponent ();
             BindingContext = new BSCSettingsVM();
         }
+
+        protected override void OnDisappearing()
+        {
+            MessagingCenter.Send<SettingsPage>(this, "SettingChanged");
+            base.OnDisappearing();
+        }
     }
 }

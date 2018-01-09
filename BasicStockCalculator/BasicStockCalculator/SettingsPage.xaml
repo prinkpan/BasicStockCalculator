@@ -30,11 +30,11 @@
                    VerticalTextAlignment="Center"
                    Grid.Row="0" Grid.Column="1"/>
             <Stepper x:Name="rangeStepper"
-                    Value="{Binding MaxRange, Mode=TwoWay}"
-                    Minimum="1"
-                    Maximum="25"
-                    Increment="1"
-                    Grid.Row="0" Grid.Column="2"/>
+                     Value="{Binding MaxRange, Mode=TwoWay}"
+                     Minimum="1"
+                     Maximum="25"
+                     Increment="1"
+                     Grid.Row="0" Grid.Column="2"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

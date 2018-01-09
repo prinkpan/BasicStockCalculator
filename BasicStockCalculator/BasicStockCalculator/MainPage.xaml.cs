@@ -21,15 +21,31 @@ namespace BasicStockCalculator
 
         void OnValueChanged(object sender, TextChangedEventArgs e)
         {
+            PerformCalculation(e.NewTextValue);
+        }
+
+        void OnSettingsClicked(object sender, EventArgs e)
+        {
+            var settings = new SettingsPage();
+            MessagingCenter.Unsubscribe<SettingsPage>(settings, "SettingChanged");
+            MessagingCenter.Subscribe<SettingsPage>(settings, "SettingChanged", (s) =>
+            {
+                PerformCalculation(stockAmount.Text);
+            });
+            this.Navigation.PushAsync(settings);
+        }
+
+        void PerformCalculation(string value)
+        {
             try
             {
                 BSCSettingsVM bscSettings = new BSCSettingsVM();
                 var MaxRange = bscSettings.MaxRange;
 
                 PercentageCalculations.Clear();
-                if (e.NewTextValue.Length > 0)
+                if (value.Length > 0)
                 {
-                    EnteredValue = Convert.ToDouble(e.NewTextValue);
+                    EnteredValue = Convert.ToDouble(value);
                     for (int i = 1; i <= MaxRange; i++)
                     {
                         var percent = (i / 100.00) * EnteredValue;
@@ -40,7 +56,7 @@ namespace BasicStockCalculator
                         {
                             Percentage = i + "%",
                             PercentVal = String.Format("{0:0.00}", percent),
-                            Positive =  String.Format("{0:0.00}", positive),
+                            Positive = String.Format("{0:0.00}", positive),
                             Negative = String.Format("{0:0.00}", negative)
                         });
                     }
@@ -51,12 +67,6 @@ namespace BasicStockCalculator
             {
                 //Handle exception
             }
-        }
-
-        void OnSettingsClicked(object sender, EventArgs e)
-        {
-            var settings = new SettingsPage();
-            this.Navigation.PushAsync(settings);
         }
     }
 }
