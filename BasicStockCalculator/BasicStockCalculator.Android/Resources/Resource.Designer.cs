@@ -6982,6 +6982,9 @@ namespace BasicStockCalculator.Droid
 			// aapt resource value: 0x7f0b019a
 			public const int MainTheme_Base = 2131427738;
 			
+			// aapt resource value: 0x7f0b019c
+			public const int MyTheme_Splash = 2131427740;
+			
 			// aapt resource value: 0x7f0b002d
 			public const int Platform_AppCompat = 2131427373;
 			
