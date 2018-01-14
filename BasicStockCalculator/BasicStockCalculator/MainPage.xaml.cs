@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Threading.Tasks;
 
 namespace BasicStockCalculator
 {
@@ -68,5 +69,25 @@ namespace BasicStockCalculator
                 //Handle exception
             }
         }
+
+        //protected override async void OnAppearing()
+        //{
+        //    try
+        //    {
+        //        base.OnAppearing();
+        //        // Waiting some time
+        //        await Task.Delay(2000);
+
+        //        // Start animation
+        //        await Task.WhenAll(
+        //            Logo.ScaleTo(10, 2000)
+                    
+        //            );
+        //    }
+        //    catch(Exception e)
+        //    {
+        //        //Handle error
+        //    }
+        //}
     }
 }

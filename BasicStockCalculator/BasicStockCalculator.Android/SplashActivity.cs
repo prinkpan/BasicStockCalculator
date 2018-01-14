@@ -7,7 +7,7 @@ using Android.Util;
 
 namespace BasicStockCalculator.Droid
 {
-    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "Stock Kit", Icon = "@drawable/ic_launcher", Theme = "@style/SplashTheme", MainLauncher = true, NoHistory = true)]
     public class SplashActivity : AppCompatActivity
     {
         static readonly string TAG = "X:" + typeof(SplashActivity).Name;
@@ -33,7 +33,7 @@ namespace BasicStockCalculator.Droid
         async void SimulateStartup()
         {
             Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
-            await Task.Delay(500); // Simulate a bit of startup work.
+            await Task.Delay(700); // Simulate a bit of startup work.
             Log.Debug(TAG, "Startup work is finished - starting MainActivity.");
             StartActivity(new Intent(Application.Context, typeof(MainActivity)));
         }
