@@ -15,7 +15,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="stockAmount"
-                   Placeholder="Enter Stock Amount"
+                   Placeholder="Enter a Stock Amount"
                    Keyboard="Numeric"
                    TextChanged="OnValueChanged"
                    FontSize="Medium"/>
